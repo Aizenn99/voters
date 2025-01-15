@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गावानुसार यादी</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007b5e;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: calc(100% - 90px);
+            margin-right: 10px;
+        }
+        .btn {
+            display: flex;
+            justify-content: end;
+            align-items: end;
+        }
+
+         button {
+            margin-right: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color:green;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+         button:hover {
+            background-color: green;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            background-color: #007b5e;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007b5e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>गावानुसार यादी</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="गाव">
+            <button>शोधा</button>
+            <button>रिसेट</button>
+            <button>Excel</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>अनु क्र.</th>
+                    <th>गाव</th>
+                    <th>एकूण</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>उचगाव</td>
+                    <td>22957</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>पाचगाव</td>
+                    <td>19747</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>साळोखे नगर</td>
+                    <td>15331</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>गांधीनगर</td>
+                    <td>12429</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>मुडशिंगी</td>
+                    <td>10561</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>राजोपाध्ये नगर</td>
+                    <td>10531</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>राजेंद्र नगर</td>
+                    <td>10198</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>संभाजी नगर</td>
+                    <td>10029</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>बाबा जरा नगर</td>
+                    <td>9359</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>लक्षतीर्थ वसाहत</td>
+                    <td>9226</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>सुरव नगर</td>
+                    <td>8982</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>जवाहर नगर</td>
+                    <td>8873</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="btn">
+        <a href="/listpage.html">
+            <button>
+                Back
+            </button>
+        </a>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".search-bar input");
+        const searchButton = document.querySelectorAll(".search-bar button")[0];
+        const resetButton = document.querySelectorAll(".search-bar button")[1];
+        const tableRows = document.querySelectorAll("tbody tr");
+
+        // Search Functionality
+        searchButton.addEventListener("click", function () {
+            const query = searchInput.value.trim().toLowerCase();
+
+            tableRows.forEach(row => {
+                const villageName = row.children[1].textContent.toLowerCase();
+                if (villageName.includes(query)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+
+        // Reset Functionality
+        resetButton.addEventListener("click", function () {
+            searchInput.value = "";
+            tableRows.forEach(row => {
+                row.style.display = "";
+            });
+        });
+    });
+</script>
+
+</html>

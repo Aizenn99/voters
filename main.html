@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajtantra 5.0</title>
+    <title>Hero</title>
     <style>
+
         /* General Reset */
         * {
             margin: 0;
@@ -58,10 +60,16 @@
 
         /* Icon Grid */
         .icons {
+            padding-top: 30px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 15px;
             margin-top: 20px;
+
+        }
+
+        .icons a {
+            text-decoration: none;
         }
 
         .icon {
@@ -72,9 +80,12 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, background-color 0.3s;
+            color: black;
+
         }
 
         .icon:hover {
+            cursor: pointer;
             background-color: #bbdefb;
             transform: translateY(-5px);
         }
@@ -83,7 +94,10 @@
             width: 50px;
             height: 50px;
             margin-bottom: 8px;
+
+
         }
+
 
         /* Server Status */
         .server-status {
@@ -107,6 +121,7 @@
 
         /* Banner Section */
         .banner {
+            padding-top: 20px;
             background: linear-gradient(135deg, #ff8a65, #ff7043);
             color: white;
             text-align: center;
@@ -143,7 +158,7 @@
             font-size: 14px;
             color: #333;
         }
-
+            
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-title {
@@ -164,47 +179,60 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
-        <img src="user.jpg" alt="User" />
-        <div class="header-title">274-Kolhapur South</div>
+        
+        <div class="header-title">ND</div>
     </div>
 
     <div class="main">
         <h1>BJP Uchgaon</h1>
-        <p>Voter Survey - Family: 35273, Total: 77529, Non Voters: 0</p>
+        <p>Sabka Sath Sabka Vikas</p>
 
         <div class="icons">
-            <div class="icon">
-                <a href=""><img src="search.png" alt="Search" /></a>
-            </div>
-            <div class="icon">
-                <a href=""><img src="list.png" alt="List" /></a>
-            </div>
-            <div class="icon">
-                <a href=""><img src="non_voters.png" alt="Non Voters" /></a>
-            </div>
-            <div class="icon">
-                <a href=""><img src="plan.png" alt="Plan" /></a>
-            </div>
-            <div class="icon">
-                <a href=""><img src="report.png" alt="Report" /></a>
-            </div>
-            <div class="icon">
-                <a href=""><img src="settings.png" alt="Settings" /></a>
-            </div>
-            <div class="icon">
-                <a href=""><img src="sync.png" alt="Sync" /></a>
-            </div>
-            <div class="icon">
-                <a href=""><img src="about.png" alt="About Us" /></a>
-            </div>
+            <a href="/search.html">
+                <div class="icon">
+                    <img src="search.png" alt="Search" />
+                </div>
+            </a>
+            <a href="/listpage.html">
+                <div class="icon">
+                    <img src="list.png" alt="List" />
+                </div>
+            </a>
+            <a href="">
+                <div class="icon">
+                    <img src="non_voters.png" alt="Non Voters" />
+                </div>
+            </a>
+            <a href="">
+                <div class="icon">
+                    <img src="plan.png" alt="Plan" />
+                </div>
+            </a>
+            <a href="">
+                <div class="icon">
+                    <img src="report.png" alt="Report" />
+                </div>
+            </a>
+            <a href="">
+                <div class="icon">
+                    <img src="settings.png" alt="Settings" />
+                </div>
+            </a>
+            <a href="">
+                <div class="icon">
+                    <img src="sync.png" alt="Sync" />
+                </div>
+            </a>
+            <a href="/about.html">
+                <div class="icon">
+                    <img src="about.png" alt="About Us" />
+                </div>
+            </a>
         </div>
 
-        <div class="server-status">
-            <p>Server Status...</p>
-            <button>Check Server Status</button>
-        </div>
     </div>
 
     <div class="banner">
@@ -217,4 +245,5 @@
         <p>मतदान दिनांक: 20/11/2025 सकाळी 7 ते सायं: 6</p>
     </div>
 </body>
+
 </html>
